@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListaContactosComponent
   ],
   imports: [
     BrowserModule,
