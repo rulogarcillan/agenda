@@ -1,3 +1,4 @@
+import { ContactosService } from './contactos.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -16,7 +17,7 @@ import { ListaContactosComponent } from './lista-contactos/lista-contactos.compo
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ContactosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

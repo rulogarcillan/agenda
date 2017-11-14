@@ -1,3 +1,4 @@
+import { ContactosService } from './contactos.service';
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
@@ -8,20 +9,15 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 })
 export class AppComponent implements OnInit {
 
+  listaContactos: string[];
+  constructor(private _contactosService: ContactosService) { }
 
-  listaContactos: string[] = [
-    'Bill Gates',
-    'Perry Mason',
-    'Mortadelo',
-    'Filemon',
-    'Ronaldo'
-  ];
   ngOnInit(): void {
-    console.log('Hola agenda');
+    this.listaContactos = this._contactosService.getContactos();
   }
 
   eliminarContacto(contacto: string): void {
-    this.listaContactos = this.listaContactos.filter(c => c !== contacto);
+    this.listaContactos = this._contactosService.eliminarContacto(contacto);
   }
 
   title = 'Agenda';

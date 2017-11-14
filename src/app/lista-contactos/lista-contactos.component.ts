@@ -15,8 +15,6 @@ export class ListaContactosComponent {
   @Output() botonEliminarPulsado = new EventEmitter<string>();
 
   notificarContactoEliminar(contacto: string): void {
-
-
     this.botonEliminarPulsado.emit(contacto);
   }
 
