@@ -1,0 +1,5 @@
+<form [formGroup]="formularioContacto" (ngSubmit)="notificarCrearContacto()">
+  <input type="text" placeholder="Nombre e.j Rulo" formControlName="nombre">
+  <span *ngIf="formularioContacto.get('nombre').touched && formularioContacto.get('nombre').invalid">Nombre es obligatorio y debe tener al menos 3 caracteres</span>
+  <button type="submit" [disabled]="formularioContacto.invalid">Guardar</button>
+</form>
