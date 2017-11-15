@@ -1,5 +1,52 @@
 <form [formGroup]="formularioContacto" (ngSubmit)="notificarCrearContacto()">
-  <input type="text" placeholder="Nombre e.j Rulo" formControlName="nombre">
-  <span *ngIf="formularioContacto.get('nombre').touched && formularioContacto.get('nombre').invalid">Nombre es obligatorio y debe tener al menos 3 caracteres</span>
-  <button type="submit" [disabled]="formularioContacto.invalid">Guardar</button>
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="nombre-contacto">Nombre</label>
+      <input type="text" id="nombre-contacto" placeholder="E.j Raúl" formControlName="nombre" class="u-full-width">
+      <span *ngIf="formularioContacto.get('nombre').touched && formularioContacto.get('nombre').invalid">Nombre es obligatorio y debe tener al menos 3 caracteres</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="apellidos-contacto">Apellidos</label>
+      <input type="text" id="apellidos-contacto" placeholder="E.j Rodriguez" formControlName="apellidos" class="u-full-width">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="telefono-contacto">Telefono</label>
+      <input type="number" id="telefono-contacto" placeholder="E.j 6676688XX" formControlName="telefono" class="u-full-width">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="email-contacto">Email</label>
+      <input type="text" id="email-contacto" placeholder="E.j prueba@prueba.com" formControlName="email" class="u-full-width">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="facebook-contacto">Facebook</label>
+      <input type="text" id="facebook-contacto" placeholder="E.j bob.esponja" formControlName="facebook" class="u-full-width">
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="twitter-contacto">Twitter</label>
+      <input type="text" id="twitter-contacto" placeholder="E.j @esponja" formControlName="twitter" class="u-full-width">
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <button type="submit" [disabled]="formularioContacto.invalid" class="u-full-width button-primary">Guardar</button>
+    </div>
+  </div>
 </form>
