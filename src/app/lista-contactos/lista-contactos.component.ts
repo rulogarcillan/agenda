@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Input } from '@angular/core/';
 import { Output } from '@angular/core/';
 import { EventEmitter } from '@angular/core/';
+import { Contacto } from '../contacto';
 
 @Component({
   selector: 'app-lista-contactos',
@@ -11,10 +12,10 @@ import { EventEmitter } from '@angular/core/';
 })
 export class ListaContactosComponent {
 
-  @Input() contactos: String[];
-  @Output() botonEliminarPulsado = new EventEmitter<string>();
+  @Input() contactos: Contacto[];
+  @Output() botonEliminarPulsado = new EventEmitter<Contacto>();
 
-  notificarContactoEliminar(contacto: string): void {
+  notificarContactoEliminar(contacto: Contacto): void {
     this.botonEliminarPulsado.emit(contacto);
   }
 
