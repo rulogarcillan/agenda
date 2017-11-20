@@ -13,6 +13,7 @@ import { ContactosService } from '../contactos.service';
 export class MisContactosComponent implements OnInit {
   
   listaContactos: Contacto[];
+  contactoSeleccionado : Contacto;
 
   contactos$: Observable<Contacto[]>;
   constructor(private _contactosService: ContactosService) { }
@@ -27,9 +28,12 @@ export class MisContactosComponent implements OnInit {
      this.contactos$ = this._contactosService.getContactos()
   }
 
-   
-  eliminarContacto(contacto: Contacto): void {
- //   this.listaContactos = this._contactosService.eliminarContacto(contacto);
+  verDetallesContactos(contacto: Contacto):void{
+    this.contactoSeleccionado= contacto;
+
   }
+  /*eliminarContacto(contacto: Contacto): void {
+ //   this.listaContactos = this._contactosService.eliminarContacto(contacto);
+  }*/
 
 }

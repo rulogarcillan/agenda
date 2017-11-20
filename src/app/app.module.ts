@@ -11,6 +11,7 @@ import { FormularioContactoComponent } from './formulario-contacto/formulario-co
 import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
 import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
 import {HttpClientModule} from '@angular/common/http';
+import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {HttpClientModule} from '@angular/common/http';
     ListaContactosComponent,
     FormularioContactoComponent,
     NuevoContactoComponent,
-    MisContactosComponent
+    MisContactosComponent,
+    DetallesContactoComponent
   ],
   imports: [
     BrowserModule,

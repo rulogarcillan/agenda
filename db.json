@@ -39,6 +39,15 @@
       "facebook": "",
       "twitter": "",
       "id": 7
+    },
+    {
+      "nombre": "Juan",
+      "apellidos": "Perez",
+      "telefono": 667887744,
+      "email": "raulrcs@gmail.com",
+      "facebook": "rulogarcillan",
+      "twitter": "@rulo",
+      "id": 8
     }
   ]
 }

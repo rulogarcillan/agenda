@@ -2,14 +2,13 @@
   <h5>Mis contacto</h5>
   <hr>
 </header>
-<div>
-  <app-lista-contactos 
-  
-  
-
-  [contactos]="contactos$ | async" 
-  
-  (botonEliminarPulsado)=eliminarContacto($event)></app-lista-contactos>
+<div class="row">
+  <div class="six columns">
+    <app-lista-contactos [contactos]="contactos$ | async" (contactoSeleccionado)=verDetallesContactos($event)></app-lista-contactos>
+  </div>
+  <div class="six columns">
+    <app-detalles-contacto [contacto]="contactoSeleccionado"></app-detalles-contacto>
+  </div>
 </div>
 
 <!-- [contactos]="listaContactos" -->
