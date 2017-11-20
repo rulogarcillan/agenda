@@ -1,27 +1,26 @@
 import { Contacto } from './contacto';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { environment } from '../environments/environment'
 
 @Injectable()
 export class ContactosService {
 
-  private _listaContactos: Contacto[] = [
-    { id:1, nombre: 'Bill', apellidos: 'Gates' },
-    { id:2, nombre: 'Perry', apellidos: 'Mason' },
-    { id:3, nombre: 'Mortadelo' },
-    { id:4, nombre: 'Filemon' },
-    { id:5, nombre: 'Ronaldo' }
-  ];
+  constructor(private _httpClient: HttpClient) { }
 
-  getContactos(): Contacto[] {
-    return this._listaContactos;
+
+  getContactos(): Observable<Contacto[]> {
+    return this._httpClient.get<Contacto[]>(`${environment.rutaApi}/contactos`);
   }
 
-  eliminarContacto(contacto: Contacto): Contacto[] {
-    return this._listaContactos = this._listaContactos.filter(c => c.id !== contacto.id);
+  eliminarContacto(contacto: Contacto): Observable<Contacto> {
+    return this._httpClient.delete<Contacto>(`${environment.rutaApi}/${contacto.id}`);
+    //return this._listaContactos = this._listaContactos.filter(c => c.id !== contacto.id);
   }
 
-  setContacto(contacto: Contacto): void {
-    this._listaContactos.push(contacto);
+  setContacto(contacto: Contacto): Observable<Contacto> {
+    return this._httpClient.post<Contacto>(`${environment.rutaApi}/contactos`, contacto);
   }
 
 }

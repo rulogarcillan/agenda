@@ -10,6 +10,7 @@ import { ListaContactosComponent } from './lista-contactos/lista-contactos.compo
 import { FormularioContactoComponent } from './formulario-contacto/formulario-contacto.component';
 import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
 import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [ContactosService],
   bootstrap: [AppComponent]

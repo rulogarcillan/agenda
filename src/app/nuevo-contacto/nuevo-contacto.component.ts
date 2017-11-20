@@ -16,8 +16,8 @@ export class NuevoContactoComponent {
 
 
   guardarContacto(contacto: Contacto): void {
-    this._contactosService.setContacto(contacto);
-    this._router.navigateByUrl('/todos');
+    this._contactosService.setContacto(contacto).subscribe(() => {
+      this._router.navigateByUrl('/todos');
+    });
   }
-
 }

@@ -1,5 +1,7 @@
+import { Observable } from 'rxjs/Observable';
+import { Contacto } from './../contacto';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Contacto } from '../contacto';
+
 import { ContactosService } from '../contactos.service';
 
 @Component({
@@ -11,15 +13,23 @@ import { ContactosService } from '../contactos.service';
 export class MisContactosComponent implements OnInit {
   
   listaContactos: Contacto[];
+
+  contactos$: Observable<Contacto[]>;
   constructor(private _contactosService: ContactosService) { }
   
   ngOnInit(): void {
-    this.listaContactos = this._contactosService.getContactos();
+
+    //forma antigua, asignado el observable manualmente y el template cambiado el valor
+    /* this._contactosService.getContactos().subscribe((contactos: Contacto[])=>{
+       this.listaContactos=contactos;
+     });*/
+
+     this.contactos$ = this._contactosService.getContactos()
   }
 
    
   eliminarContacto(contacto: Contacto): void {
-    this.listaContactos = this._contactosService.eliminarContacto(contacto);
+ //   this.listaContactos = this._contactosService.eliminarContacto(contacto);
   }
 
 }
