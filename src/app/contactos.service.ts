@@ -15,8 +15,8 @@ export class ContactosService {
   }
 
   eliminarContacto(contacto: Contacto): Observable<Contacto> {
-    return this._httpClient.delete<Contacto>(`${environment.rutaApi}/${contacto.id}`);
-    //return this._listaContactos = this._listaContactos.filter(c => c.id !== contacto.id);
+    return this._httpClient.delete<Contacto>(`${environment.rutaApi}/contactos/${contacto.id}`);
+    // return this._listaContactos = this._listaContactos.filter(c => c.id !== contacto.id);
   }
 
   setContacto(contacto: Contacto): Observable<Contacto> {

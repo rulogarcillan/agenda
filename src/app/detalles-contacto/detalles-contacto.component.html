@@ -8,13 +8,17 @@
     <hr>
   </div>
 
-  <button *ngIf="contacto.facebook" (click)="navegarFacebook()">
+  <button class="red-social" *ngIf="contacto.facebook" (click)="navegarFacebook()">
     <i class="fa fa-facebook-square" aria-hidden="true"></i>
   </button>
-  <button *ngIf="contacto.twitter" (click)="navegarTwitter()">
+  <button class="red-social" *ngIf="contacto.twitter" (click)="navegarTwitter()">
     <i class="fa fa-twitter-square" aria-hidden="true"></i>
   </button>
   <div>
     <span>{{contacto.facebook}} {{contacto.twitter}}</span>
+  </div>
+  <hr>
+  <div>
+    <button (click)="notificarContactoEliminar(contacto)">Eliminar contacto</button>
   </div>
 </div>

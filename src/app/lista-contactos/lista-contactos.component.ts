@@ -13,15 +13,10 @@ import { EventEmitter } from '@angular/core/';
 export class ListaContactosComponent {
 
   @Input() contactos: Contacto[];
-  @Output() botonEliminarPulsado = new EventEmitter<Contacto>();
+
   @Output() contactoSeleccionado = new EventEmitter<Contacto>();
 
   sentidoOrdenacion = 'asc';
-
-  notificarContactoEliminar(contacto: Contacto): void {
-    this.botonEliminarPulsado.emit(contacto);
-  }
-
 
   notificarContactoSeleccionado(contacto: Contacto): void {
     this.contactoSeleccionado.emit(contacto);

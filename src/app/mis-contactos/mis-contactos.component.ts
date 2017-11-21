@@ -19,7 +19,7 @@ export class MisContactosComponent implements OnInit {
 
   ngOnInit(): void {
 
-    //forma antigua, asignado el observable manualmente y el template cambiado el valor
+    // forma antigua, asignado el observable manualmente y el template cambiado el valor
     /* this._contactosService.getContactos().subscribe((contactos: Contacto[])=>{
        this.listaContactos=contactos;
      });*/
@@ -27,12 +27,25 @@ export class MisContactosComponent implements OnInit {
     this.contactos$ = this._contactosService.getContactos();
   }
 
+  private _recuperarContactosDesdeServidor(): void {
+
+    this.contactos$ = this._contactosService.getContactos();
+
+
+  }
+
   verDetallesContactos(contacto: Contacto): void {
     this.contactoSeleccionado = contacto;
 
   }
-  /*eliminarContacto(contacto: Contacto): void {
- //   this.listaContactos = this._contactosService.eliminarContacto(contacto);
-  }*/
+  preguntarEliminarContacto(contacto: Contacto): void {
 
+    if (confirm(`¿Estas seguro que deseas eliminar el contacto ${contacto.nombre} ${contacto.apellidos}`)) {
+      this._contactosService.eliminarContacto(contacto).subscribe(() => {
+        this.contactoSeleccionado = null;
+        this._recuperarContactosDesdeServidor();
+      });
+
+    }
+  }
 }

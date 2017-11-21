@@ -7,7 +7,7 @@
     <app-lista-contactos [contactos]="contactos$ | async" (contactoSeleccionado)=verDetallesContactos($event)></app-lista-contactos>
   </div>
   <div class="six columns">
-    <app-detalles-contacto [contacto]="contactoSeleccionado"></app-detalles-contacto>
+    <app-detalles-contacto (botonEliminarPulsado)="preguntarEliminarContacto($event)" [contacto]="contactoSeleccionado"></app-detalles-contacto>
   </div>
 </div>
 

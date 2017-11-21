@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Input } from '@angular/core/';
+import { Component, OnInit, ViewEncapsulation, Input, Output } from '@angular/core';
+
 import { Contacto } from '../contacto';
+import { EventEmitter } from '@angular/core/';
+
 
 @Component({
   selector: 'app-detalles-contacto',
@@ -9,8 +11,8 @@ import { Contacto } from '../contacto';
 })
 export class DetallesContactoComponent {
 
+  @Output() botonEliminarPulsado = new EventEmitter<Contacto>();
   @Input() contacto: Contacto;
-
 
   navegarFacebook(): void {
     const ruta = `https://facebook.com/${this.contacto.facebook}`;
@@ -21,6 +23,10 @@ export class DetallesContactoComponent {
   navegarTwitter(): void {
     const ruta = `https://twitter.com/${this.contacto.twitter}`;
     window.open(ruta, '_blank');
+  }
+
+  notificarContactoEliminar(contacto: Contacto): void {
+    this.botonEliminarPulsado.emit(contacto);
   }
 
 }
