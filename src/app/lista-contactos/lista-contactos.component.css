@@ -5,3 +5,14 @@ ul {
 li:hover {
     background: #f0f0f0;
 }
+
+button {
+    padding: 0;
+    border: none;
+}
+
+i {
+    font-size: 18px;
+    padding: 0;
+    color: #1eaebd
+}

@@ -3,51 +3,56 @@
     {
       "id": 1,
       "nombre": "Bill",
-      "apellidos": "Gates"
+      "apellidos": "Gates",
+      "telefono": "555 667 998",
+      "email": "bill.gates@microsoft.com",
+      "facebook": "BillGates",
+      "twitter": "@BillGates"
     },
     {
-      "id": 2,
-      "nombre": "Perry",
-      "apellidos": "Mason"
+      "nombre": "Tim",
+      "apellidos": "Cook",
+      "telefono": "456 789 234",
+      "email": "tim.cook@apple.com",
+      "facebook": "",
+      "twitter": "@tim_cook",
+      "id": 2
     },
     {
-      "id": 3,
-      "nombre": "Mortadelo"
+      "nombre": "Elon",
+      "apellidos": "Musk",
+      "telefono": "764 345 623",
+      "email": "",
+      "facebook": "Elon-Musk",
+      "twitter": "@elonmusk",
+      "id": 3
     },
     {
-      "id": 4,
-      "nombre": "Filemon"
+      "nombre": "Steve",
+      "apellidos": "Wozniak",
+      "telefono": "",
+      "email": "woz@vodafone.com",
+      "facebook": "stevewoz",
+      "twitter": "@stevewoz",
+      "id": 4
     },
     {
-      "id": 5,
-      "nombre": "Ronaldo"
-    },
-    {
-      "nombre": "dfdsfsdfsfs",
-      "apellidos": "sdfssfd",
+      "nombre": "Satya",
+      "apellidos": "Nadella",
       "telefono": "",
       "email": "",
       "facebook": "",
-      "twitter": "",
-      "id": 6
+      "twitter": "@satyanadella",
+      "id": 5
     },
     {
-      "nombre": "calamardo",
-      "apellidos": "tentaculos",
-      "telefono": 667887744,
+      "nombre": "Sundar",
+      "apellidos": "Pichai",
+      "telefono": "",
       "email": "",
       "facebook": "",
-      "twitter": "",
-      "id": 7
-    },
-    {
-      "nombre": "Juan",
-      "apellidos": "Perez",
-      "telefono": 667887744,
-      "email": "raulrcs@gmail.com",
-      "facebook": "rulogarcillan",
-      "twitter": "@rulo",
-      "id": 8
+      "twitter": "@sundarpichai",
+      "id": 6
     }
   ]
 }

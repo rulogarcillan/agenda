@@ -1,4 +1,11 @@
+<button (click)="cambiarSentidoOrdenacion()">
+  <i class="fa fa-sort-alpha-asc" aria-hidden="true" [ngClass]="{
+    'fa-sort-alpha-asc': sentidoOrdenacion === 'desc',
+    'fa-sort-alpha-desc': sentidoOrdenacion === 'asc'
+  }"></i>
+</button>
+
 <ul>
-  <li *ngFor="let contacto of contactos" (click)="notificarContactoSeleccionado(contacto)">{{contacto.nombre}} {{contacto.apellidos}}
+  <li *ngFor="let contacto of contactos | ordenacionContactos:sentidoOrdenacion" (click)="notificarContactoSeleccionado(contacto)">{{contacto.nombre}} {{contacto.apellidos}}
   </li>
 </ul>

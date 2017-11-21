@@ -12,6 +12,8 @@ import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.componen
 import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
 import {HttpClientModule} from '@angular/common/http';
 import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto.component';
+import { DatosContactoPipe } from './datos-contacto.pipe';
+import { OrdenacionContactosPipe } from './ordenacion-contactos.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto
     FormularioContactoComponent,
     NuevoContactoComponent,
     MisContactosComponent,
-    DetallesContactoComponent
+    DetallesContactoComponent,
+    DatosContactoPipe,
+    OrdenacionContactosPipe
   ],
   imports: [
     BrowserModule,

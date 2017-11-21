@@ -6,8 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-nuevo-contacto',
   templateUrl: './nuevo-contacto.component.html',
-  styleUrls: ['./nuevo-contacto.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./nuevo-contacto.component.css']
 })
 export class NuevoContactoComponent {
 
